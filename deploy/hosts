@@ -1,0 +1,15 @@
+#
+# onceness inventory
+#
+
+[common]
+onceness.com
+
+[dbservers]
+onceness.com
+
+[proxyservers]
+onceness.com
+
+[appservers]
+onceness.com

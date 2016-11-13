@@ -1,0 +1,20 @@
+---
+
+# this playbook de-provisions the host
+- hosts: appservers
+  remote_user: root
+  tasks:
+    - name: stop and remove the web app
+      docker: image="n0n3such/onceness:latest" name="app" state=absent
+
+- hosts: dbservers
+  remote_user: root
+  tasks:
+    - name: stop and remove the mongod container
+      docker: image="mongo" name="db" state=absent
+
+- hosts: proxyservers
+  remote_user: root
+  tasks:
+    - name: stop and remove the nginx container
+      docker: image="nginx" name="proxy" state=absent

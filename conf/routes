@@ -1,0 +1,6 @@
+
+GET /					controllers.App.splash
+GET	/msg/:key			controllers.App.get(key: String)
+POST /msg				controllers.App.put
+GET /assets/*file		controllers.Assets.at(path="/public", file)
+

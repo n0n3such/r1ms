@@ -1,0 +1,171 @@
+body {
+	text-shadow: none;
+}
+
+tr:hover {
+	background-color: #f0fff0;
+}
+
+#page-header {
+	border-bottom: 2px solid #999999;
+	/* background-color: #6dffca; */
+	/* background-color: #0BBAD2; */
+	background-color: #0085b2;
+	padding-top: 1em;
+	color: #eeeeee;
+	vertical-align: bottom;
+}
+
+#page-header-image {
+	padding-left: 1em;
+}
+
+#page-header-title {
+	display: inline-block;
+	font-size: 1.3em;
+	letter-spacing: .2em;
+	text-align: left;
+	text-shadow: none;
+}
+
+#page-header-trademark {
+	font-family: 'Raleway Dots';
+	font-style: bold;
+	text-shadow: none;
+	color: white;
+}
+
+#page-header-text {
+	color: #222222;
+	font-family: 'Raleway Dots';
+	font-size: .6em;
+	padding-left: 1em;
+}
+
+#page-header-menu {
+	display: inline-block;
+	float: right;
+	font-size: .7em;
+	letter-spacing: .1em;
+	text-shadow: none;
+	margin-top: 2.2em;
+	margin-right: 4em;
+}
+
+#page-header-svg {
+	height: 1.8em;
+}
+
+#page-footer {
+	background-color: #0085b2;
+	color: #eeeeee;
+	text-align: center;
+	text-shadow: none;
+}
+
+.page-footer-svg {
+	height: 1.5em;
+}
+
+#page-footer .ui-block-a,
+#page-footer .ui-block-b,
+#page-footer .ui-block-c {
+	font-size: .5em;
+	letter-spacing: .2em;
+	text-align: center;
+	padding-bottom: .5em;
+}
+
+#page-footer .ui-block-a,
+#page-footer .ui-block-c {
+	padding-top: .5em;
+}
+
+#page-footer .ui-block-b {
+	padding-top: 1em;
+}
+
+#copyright-text {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#msg-content {
+	font-size: 1em;
+	max-width: 40em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#msg-intro {
+	width: 100%;
+	display: block;
+	font-family: 'Raleway';
+}
+
+#msg-in {
+	width: 100%;
+	display: block;
+}
+
+#msg-textarea {
+	font-family: 'Raleway Dots';
+}
+
+#msg-control {
+	width: 100%;
+	display: block;
+}
+
+#msg-submit {
+	font-family: 'Raleway Dots';
+	font-size: .8em;
+	width: 100%;
+}
+
+#msg-out {
+	width: 100%;
+	display: block;
+	font-size: .8em;
+}
+
+#msg-key,
+#msg-msg {
+	font-family: 'Raleway Dots';
+	display: inline-block;
+	vertical-align: top;
+}
+
+#msg-out .ui-body {
+	min-height: 2em;
+}
+
+#msg-key-text,
+#msg-key-image,
+#msg-msg-text,
+#msg-msg-image {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+#msg-out .ui-block-a,
+#msg-out .ui-block-b {
+	width: 46%;
+	margin: 2%;
+}
+
+.qrcode {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#bitcoin-image {
+	height: 1.5em;
+}
+
+#bitcoin-address {
+}
+
+
+

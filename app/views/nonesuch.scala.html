@@ -1,0 +1,24 @@
+@(path: String)
+<!DOCTYPE html>
+<html>
+<head>
+	@templates.head()
+</head>
+
+<body>
+<div data-role="page" id="splash" data-theme="a">
+
+	@templates.pageHeader()
+
+	<div data-role="main" class="ui-content ui-content-a" id="nonesuch-main">
+		<div id="nonesuch-content">
+			@path could not be found
+		</div>	<!-- end nonesuch-content -->
+	</div>		<!-- end nonesuch-main -->
+
+	@templates.pageFooter()
+</div>			<!-- end page -->
+	@templates.foot()
+</body>
+</html>
+

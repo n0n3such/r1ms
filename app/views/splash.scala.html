@@ -1,0 +1,23 @@
+@()(implicit flash: Flash, lang: Lang)
+<!DOCTYPE html>
+<html>
+<head>
+	@templates.head()
+</head>
+
+<body>
+<div data-role="page" id="splash" data-theme="a">
+
+	@templates.pageHeader()
+
+	<div data-role="main" class="ui-content ui-content-a" id="splash-main">
+		<div id="splash-content">
+		</div>	<!-- end splash-content -->
+	</div>		<!-- end splash-main -->
+
+	@templates.pageFooter()
+</div>			<!-- end page -->
+	@templates.foot()
+</body>
+</html>
+

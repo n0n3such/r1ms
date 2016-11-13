@@ -1,0 +1,36 @@
+---
+
+# this playbook provisions the hosts after the droplets have been created
+
+- hosts: common
+  remote_user: root
+  tasks:
+    - name: install pip
+      apt: name="python-pip" state=present update_cache=true
+    - name: check if docker-py is installed
+      shell: pip freeze | grep -q docker-py
+      ignore_errors: true
+      register: result
+    - name: install docker-py
+      command: /usr/bin/pip install docker-py
+      when: result|failed
+
+- hosts: dbservers
+  remote_user: root
+  tasks:
+    - name: start a mongodb container
+      docker: image="mongo" name="db" volumes="/data/db:/data/db" state=running
+
+- hosts: appservers
+  remote_user: root
+  tasks:
+    - name: start the onceness web app
+      docker: image="n0n3such/onceness:latest" name="app" links="db:db" command="-Dhttp.port=8080" state=running
+
+- hosts: proxyservers
+  remote_user: root
+  tasks:
+    - copy: src="etc/nginx/nginx.conf" dest="/etc/nginx/nginx.conf" mode=0644
+    - name: start a nginx container
+      docker: image="nginx" name="proxy" links="app:app" ports="80:80" volumes="/etc/nginx:/etc/nginx" state=running
+

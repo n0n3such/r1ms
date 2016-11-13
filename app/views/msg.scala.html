@@ -1,0 +1,62 @@
+@(reply: Reply)(implicit flash: Flash, lang: Lang)
+@import models._
+
+<!DOCTYPE html>
+<html>
+<head>
+	@templates.head()
+</head>
+<body>
+<div data-role="page" id="splash" data-theme="a">
+
+	@templates.pageHeader()
+
+	<div data-role="main" class="ui-content ui-content-a" id="msg-main">
+		<div id="msg-content">
+				<div id="msg-intro">
+				An exploration into the nature of once-ness and all things ephemeral and the logical constructions for which they serve as building blocks.
+				<p>
+				Save a message and share the key with the recipient, either as a qrcode or text.
+				<p>
+				http://www.onceness.com/msg/&lt;key&gt; will retrieve the message as a qrcode then delete it. Messages are limited to 255 characters, encrypted on disk and messages not accessed withing 14 days are automatically deleted.
+				<div>		<!-- end intro -->
+				<div id="msg-in">
+					<textarea maxlength="255" id="msg-textarea" data-mini="true" data-corners="false" placeholder="type your message"></textarea>
+				</div>		<!-- end msg-in -->
+				<div id="msg-control">
+					<button id="msg-submit" class="ui-btn" data-corners="false">save</button>
+				</div>		<!-- end msg-submit -->
+
+				<div class="ui-grid-a" id="msg-out">
+
+					<div class="ui-block-a" id="msg-key">
+						<div class="ui-bar ui-bar-a">key info</div>
+						<div class="ui-body ui-body-a">
+							<div id="msg-key-image"></div>
+							<div id="msg-key-text"></div>
+						</div>
+					</div>	<!-- end msg-key -->
+
+					<div class="ui-block-b" id="msg-msg">
+						<div class="ui-bar ui-bar-a">msg info</div>
+						<div class="ui-body ui-body-a">
+							@if(reply.status) {
+								<div id="msg-msg-image"><img class="qrcode" src="data:image/png;base64,@reply.payload"></div>
+								<div id="msg-msg-text"></div>
+							} else {
+								<div id="msg-msg-image"></div>
+								<div id="msg-msg-text">@reply.payload</div>
+							}
+						</div>
+					</div>	<!-- end msg-msg -->
+				</div>		<!-- end msg-out -->
+
+		</div>				<!-- end msg-content -->
+	</div>					<!-- end msg-main -->
+
+	@templates.pageFooter()
+</div>			<!-- end page -->
+	@templates.foot()
+</body>
+</html>
+
